@@ -15,7 +15,12 @@ function divide(a){
 
 function median(a){
   var n=a.length
-  return (n%2==0) ? (a[n/2]+a[(n/2)-1])/2 : a[parseInt(n/2)]
+  if(n%2==0){
+      return (a[n/2]+a[(n/2)-1])/2
+  }
+   else{
+     return a[parseInt(n/2)]
+   }
 }
 
 function iqr(v){
