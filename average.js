@@ -13,28 +13,14 @@ function divide(a){
     return [splice(a,0,m),splice(a,m+ex,n)]
 }
 
-function sort(v){
-  var a=v
-  var t;
-  for(var i=0;i<a.length;i++){
-     for(var j=0;j<a.length-i-1;j++){
-          if(a[j]>a[j+1]){
-            t=a[j]
-            a[j]=a[j+1]
-            a[j+1]=t
-          }
-     }
-  }
-  return a
-}
-
 function median(a){
   var n=a.length
   return (n%2==0) ? (a[n/2]+a[(n/2)-1])/2 : a[parseInt(n/2)]
 }
 
 function iqr(v){
-  var a=sort(v)
+  var a=v
+  a.sort()
   var [q1,q3]=divide(a)
   return [median(q3)-median(q1),median(q1),median(q3)]
 }
