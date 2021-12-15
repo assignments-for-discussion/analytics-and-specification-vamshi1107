@@ -1,6 +1,9 @@
 const {expect} = require('chai');
 const {average, threshold, iqr} = require('../average');
 
+ var a=[5,6,7,8,9,10,11,12,14,15,16,17,18,19,21,23,24,25,27,31]
+
+
 it('computes average of a list of numbers', ()=> {
   // floating point numbers cannot be compared for equality,
   // hence allowing a delta tolerance
@@ -16,22 +19,10 @@ it('ignores NaN in the input', ()=> {
 });
 
 it('finding iqr', ()=> {
-  var a=[30,31,31,32,33,35,48,56,62,70,88,130]
-  expect(iqr(a)[0]).equal(28);
-});
-
-it('testing lower bound', ()=> {
-  var a=[30,31,31,32,33,35,48,56,62,70,88,130]
-  expect(threshold(a)[0]).equal(-11)
-});
-
-it('testing upper bound', ()=> {
-    var a=[30,31,31,32,33,35,48,56,62,70,88,130]
-    expect(threshold(a)[1]).equal(101)
+  expect(iqr(a)[0]).to.be.approximately(12.5,0.5);
 });
 
 it('ignores outliers in the input', ()=> {
-  var a=[30,31,31,32,33,35,48,56,62,70,88,130]
-  expect(average(a)).to.be.approximately(46.9, 0.1);
+  expect(average(a)).to.be.approximately(15.9 ,0.5);
 });
 
