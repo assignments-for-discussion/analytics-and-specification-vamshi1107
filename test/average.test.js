@@ -1,8 +1,5 @@
 const {expect} = require('chai');
-const {average, threshold, iqr} = require('../average');
-
- var a=[5,6,7,8,9,10,11,12,14,15,16,17,18,19,21,23,24,25,27,31]
-
+const {average } = require('../average');
 
 it('computes average of a list of numbers', ()=> {
   // floating point numbers cannot be compared for equality,
@@ -19,5 +16,6 @@ it('ignores NaN in the input', ()=> {
 });
 
 it('ignores outliers in the input', ()=> {
-  expect(average(a)).to.be.approximately(15.9 ,0.5);
+ var a=[31,35,32,35,28,40,36,47,49,34]
+  expect(average(a)).to.be.approximately(36.5 ,0.5);
 });
