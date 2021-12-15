@@ -14,17 +14,12 @@ function divide(a){
 }
 
 function median(a){
-  var n=a.length
-  if(n%2==0){
-      return (a[n/2]+a[(n/2)-1])/2
-  }
-   else{
-     return a[parseInt(n/2)]
-   }
+   var n=a.length
+   return (n%2==0)?(a[n/2]+a[(n/2)-1])/2:a[parseInt(n/2)]
 }
 
 function iqr(v){
-  var a=v
+  var a=splice(v,0,v.length)
   a.sort()
   var [q1,q3]=divide(a)
   return [median(q3)-median(q1),median(q1),median(q3)]
@@ -43,4 +38,3 @@ function average(numbers) {
 }
 
 module.exports = {average,threshold};
-
