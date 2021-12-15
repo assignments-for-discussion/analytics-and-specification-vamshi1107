@@ -18,11 +18,6 @@ it('ignores NaN in the input', ()=> {
   expect(average([1, NaN, 2])).to.be.approximately(1.5, 0.01);
 });
 
-it('finding iqr', ()=> {
-  expect(iqr(a)[0]).to.be.approximately(12.5,0.5);
-});
-
 it('ignores outliers in the input', ()=> {
   expect(average(a)).to.be.approximately(15.9 ,0.5);
 });
-
