@@ -21,7 +21,7 @@
     "eslint": "^7.15.0",
     "eslint-config-google": "^0.14.0",
     "jscpd": "^3.3.23",
-    "mocha": "^8.2.1",
+    "mocha": "^8.4.0",
     "nyc": "^15.1.0"
   }
 }
